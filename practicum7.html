@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>QuizPulse Gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  background-color: lightyellow;
+  margin: 0;
+  padding: 20px;
+}
+
+/* text responsiveness - font size changes with screen size */
+h1 {
+  text-align: center;
+  color: purple;
+  font-size: clamp(24px, 5vw, 48px);
+}
+p {
+  text-align: center;
+  font-size: clamp(14px, 2vw, 20px);
+}
+
+/* 3 column grid container */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  border: 3px solid purple;
+  border-radius: 10px;
+}
+
+/* orientation overlay - shows only when phone is in landscape */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: purple;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 20%;
+  z-index: 10;
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  .overlay {
+    display: block;
+  }
+}
+
+/* for phone */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay">Please rotate your phone to portrait mode</div>
+
+<h1>QuizPulse Badge Gallery</h1>
+<p>Collect badges by winning quizzes!</p>
+
+<div class="gallery">
+  <img src="PR07IMG1.png" alt="Badge 1" loading="lazy">
+  <img src="PR07IMG3.png" alt="Badge 2" loading="lazy">
+  <img src="PR07IMG4.png" alt="Badge 3" loading="lazy">
+  <img src="PR07IMG6.png" alt="Badge 4" loading="lazy">
+  <img src="PR07IMG7.png" alt="Badge 5" loading="lazy">
+  <img src="PR07IMG8.png" alt="Badge 6" loading="lazy">
+</div>
+
+</body>
+</html>
